@@ -1,0 +1,284 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    background-color:rgb(153, 223, 245);
+  }
+  .navbar {
+      margin-bottom: 0px;
+      border-radius: 0;
+      padding-top: 10px;
+      width: 100%;
+    
+    }
+    #search{
+      height: 150px;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropbtn {
+      background-color: rgb(36, 35, 35);
+      color: rgb(165, 164, 164);
+      padding: 16px;
+      border: none;
+    }
+  
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #272626;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(7, 7, 7, 0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: rgb(156, 154, 154);
+      background-color: rgb(48, 46, 46);;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {color: white; background-color: rgb(36, 35, 35);}
+    
+    .dropdown:hover .dropdown-content {display: block;}
+    
+    .dropdown:hover .dropbtn {color: white; background-color: rgb(12, 12, 12);}
+  
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 5px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    
+    /* Set a style for all buttons */
+    button {
+      background-color: #292828;
+      color: rgb(190, 189, 189);
+      border: none;
+      cursor: pointer;
+      width: 150px;
+      height: 50px;
+
+    }
+    
+    
+    button:hover {
+      opacity: 0.8;
+    }
+    
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+    
+    /* Center the image and position the close button */
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+    #myCarousel{
+      background-color: white;
+    }
+    img.fake {
+      width: 200px;
+      height: 250px;
+    }
+    img.logo{
+      width: 100px;
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
+    }
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+    
+    .container {
+      padding: 16px;
+    }
+    
+    .container1{
+      padding: 16px;
+      width: 100%;
+    }
+    .row{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-left: 15px;
+    }
+    
+    span.psw {
+      display: inline-flex;
+      align-items: center;
+      float: right;
+      margin-right: 10px;
+    }
+    
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+    }
+    
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+    }
+    
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+    
+    /* Add Zoom Animation */
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+    
+    @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)} 
+      to {-webkit-transform: scale(1)}
+    }
+      
+    @keyframes animatezoom {
+      from {transform: scale(0)} 
+      to {transform: scale(1)}
+    }
+    
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+         display: block;
+         float: none;
+      }
+      .cancelbtn {
+         width: 100%;
+      }
+    }
+  
+    .input-group{
+      display: flex;
+    }
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+   
+    .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      height:500px;
+  }
+  
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none;
+    }
+  }
+  h3{
+    color: blue;
+  }
+  
+  .ads{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .well{
+    background-color: rgb(240, 167, 71);
+    border: 10px solid blue;
+  }
+  a {
+    text-decoration: none;
+  }
+    .footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    .cookie-container {
+      position: fixed;
+      bottom: -100%;
+      left: 0;
+      right: 0;
+      background: #2f3640;
+      color: #f5f6fa;
+      padding: 0 32px;
+      box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
+      transition: 400ms;
+    }
+    
+    .cookie-container.active {
+      bottom: 0;
+    }
+    
+    .cookie-container a {
+      color: #f5f6fa;
+    }
+    
+    .cookie-btn {
+      background: #e84118;
+      border: 0;
+      color: #f5f6fa;
+      font-size: 18px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  
+    
+    
+    @media only screen and (min-width: 530px) {
+      .row.content {height: auto;} 
+    }
+  @media only screen and (min-width: 900px) {
+    .row.content {height: auto;} 
+  }
+  
+  @media only screen and (min-width: 1100px) {
+    .row.content {height: auto;} 
+  }
