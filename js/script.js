@@ -53,7 +53,7 @@ $(".electronic").click(function(){
             htmlStr += "<img src=" + data[i].image +" alt='product image' class='fake'>";
             htmlStr += "<div class='card-body'>";
             htmlStr += "<h5 class='card-title margin:10px'>" + name + "</h5>";
-            htmlStr += "<p class='card-text'>" + price + "</p>"; 
+            htmlStr += "<p class='card-text'>"+ "$" + price + "</p>"; 
             htmlStr += "</div>";
             htmlStr += "</div>";
         };
@@ -88,7 +88,7 @@ $(".electronic").click(function(){
               htmlStr += "<img src=" + data[i].image +" alt='product image' class='fake'>";
               htmlStr += "<div class='card-body'>";
               htmlStr += "<h5 class='card-title margin:10px'>" + name + "</h5>";
-              htmlStr += "<p class='card-text'>" + price + "</p>"; 
+              htmlStr += "<p class='card-text'>" + "$" + price + "</p>"; 
               htmlStr += "</div>";
               htmlStr += "</div>";
           };
@@ -110,7 +110,7 @@ $(".electronic").click(function(){
               htmlStr += "<img src=" + data[i].image +" alt='product image' class='fake'>";
               htmlStr += "<div class='card-body'>";
               htmlStr += "<h5 class='card-title margin:10px'>" + name + "</h5>";
-              htmlStr += "<p class='card-text'>" + price + "</p>"; 
+              htmlStr += "<p class='card-text'>" + "$" + price + "</p>"; 
               htmlStr += "</div>";
               htmlStr += "</div>";
           };
