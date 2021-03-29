@@ -15,6 +15,9 @@
     #search{
       height: 150px;
     }
+    #up{
+      padding-left: 60Px;
+    }
     .dropdown {
       position: relative;
       display: inline-block;

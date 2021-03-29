@@ -14,11 +14,11 @@
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="varbar-top" style="width: 100%;">
-            <a class="navbar-brand" href="#"><img class="logo" src="img/logo.png"></a>
+            <a class="navbar-brand" href="#"><img class="logo" src="img/logo.png" alt="logo"></a>
             <ul class="nav navbar-nav ">
                 <li><div class="input-group">
                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                      aria-describedby="search-addon" style="width: 500px;">
+                      aria-describedby="search" style="width: 500px;">
                     <button onclick="search()" type="button" class="btn btn-outline-dark">search</button>
                     </div>
                 </li>
@@ -37,12 +37,11 @@
                               </form>
                             </div>
                           </li>
-                        <li><a href="signup/signup.html" id="up"><button>Sign Up</button> </a>
-                        
-                        </li>
+                        <li><a href="signup/signup.html" id="up">Sign Up</a></li>
                         </ul>
                       </div>
-                  <a href="#"><button onclick="myFunction()"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</button></a>
+                  <button onclick="myFunction()"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</button>
+                  </div>
                 </li>
               </ul>  
         </div>
@@ -60,9 +59,9 @@
         <li><div class="dropdown">
           <button class="dropbtn text-left">Category</button>
             <div class="dropdown-content">
-              <a href="#woman">Women Clothing</an>
+              <a href="#woman">Women Clothing</a>
               <a href="#man">Men Clothing</a>
-              <a href="#jewelries">Jewelry</a>
+              <a href="#bling">Jewelry</a>
               <a href="#electronics">Electronic</a>
             </div>
             </div>
@@ -165,23 +164,24 @@
       </div>
     </div>
   </div><br>
-  <div class="products">
+  <div id="woman">
     <h2>Style for Her</h2>
     <span><button class="women">Show/Hide</button></span>
     <div class="row" >
       <div class="row cols-sm-4" id="women">
       </div>
+    </div>  
   </div>
-  <div class="products">
+  <div id="man">
     <h2>Style for him</h2>
     <span><button class="men">Show/Hide</button></span>
-    <img src="">
     <div class="row" >
       <div class="row cols-sm-4" id="men">
       </div>
+    </div>  
   </div>
   
-  <div class="products">
+  <div id="bling">
     <h2>Jewelry</h2>
     <span><button class="jewelry">Show/Hide</button></span>
     <div class="row" >
@@ -190,20 +190,18 @@
     </div>
   </div>
 
-  <div class="products">
+  <div id="electronics">
     <h2>Electronic</h2>
     <span><button class="electronic">Show/Hide</button></span>
-    <img src="">
     <div class="row" >
       <div class="row cols-sm-4 m-5" id="electronic">
       </div>
     </div>
   </div>
   <footer class="container-fluid text-center">
-    <footer class="padding-64 light-grey small center" id="footer">
         <div class="row">
             <div class="col-sm-3">
-              <div class='main'>
+              <div class='left'>
                 <div class='weather'>
                     <h3>Check your city weather</h3>
                     <p>We care about you, how's your city weather today? Enter your city to find out.</p>
