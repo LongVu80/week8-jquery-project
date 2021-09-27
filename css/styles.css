@@ -64,12 +64,12 @@
     
     /* Set a style for all buttons */
     button {
-      background-color: #292828;
+      background-color: rgb(36, 35, 35);
       color: rgb(190, 189, 189);
       border: none;
       cursor: pointer;
       width: 150px;
-      height: 50px;
+      height: 35px;
 
     }
     
@@ -240,6 +240,17 @@
     cursor: pointer;
     width: 100px;
     height: 25px;
+  }
+  .cart{
+    position:absolute;
+    background-color: rgb(36, 35, 35);
+    color: rgb(190, 189, 189);
+    font-size: medium;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 35px;
+    bottom:0;
   }
   /* .price{
     height: 5px;

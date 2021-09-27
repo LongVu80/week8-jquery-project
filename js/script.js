@@ -53,198 +53,90 @@ $(".electronic").click(function(){
 });
 $(document).ready(function() {
 	$.get('https://fakestoreapi.com/products', function (data) {
-		console.log(data[0].title);
+		// console.log(data[0].title);
 		for (var i = 0; i < data.length; i++) {
 			if (data[i].category === "men's clothing") {
-				console.log('hello');
+				// console.log('hello');
 				$('#men').append(`
-        <div class='card m-2 border-2' style='width:200px;'>
-        <img src='${data[i].image}' class='fake'>
-        <div class='card-body'>
-        <p class ='card-title' id='productTitle'> ${data[i].title} </p>
-        <p class='card-text' id='productPrice'> $${data[i].price} </p>
-        
-        <div>
-            <form class='form'>
-                <input type="number" id='input${data[i].id}' class="itemQuantity" name="tentacles" min="0" max="100" placeholder='0' class='price'>
-                <button id='${data[i].id}' type='submit' class='add'>Add To Cart</button>
-            </form>
-            
-        </div>
+                    <div class='card m-2 border-2' style='width:200px;'>
+                    <img src='${data[i].image}' class='fake'>
+                    <div class='card-body'>
+                    <p class ='card-title' id='productTitle'> ${data[i].title} </p>
+                    <p class='card-text' id='productPrice'> $${data[i].price} </p>
+                    <button class="add-cart${data[i].id} bottom"> Add To Cart</button>
                 `);
 			} else if (data[i].category === "women's clothing") {
-				console.log('hello');
+				// console.log('hello');
 				$('#women').append(`
                     <div class='card m-2 border-2' style='width:200px;'>
                     <img src='${data[i].image}' class='fake'>
                     <div class='card-body'>
                     <p class ='card-title' id='productTitle'> ${data[i].title} </p>
                     <p class='card-text' id='productPrice'> $${data[i].price} </p>
-                    
-                    <div>
-                        <form class='form'>
-                            <input type="number" id='input${data[i].id}' class="itemQuantity" name="tentacles" min="0" max="100" placeholder='0' class='price'>
-                            <button id='${data[i].id}' type='submit' class='add'>Add To Cart</button>
-                        </form>
-                        
-                    </div>
+                    <button class="add-cart${data[i].id} bottom"> Add To Cart</button>
                 `);
 			} else if (data[i].category === 'jewelery') {
-				console.log('hello');
+				// console.log('hello');
 				$('#jewelery').append(`
-        <div class='card m-2 border-2' style='width:200px;'>
-        <img src='${data[i].image}' class='fake'>
-        <div class='card-body'>
-        <p class ='card-title' id='productTitle'> ${data[i].title} </p>
-        <p class='card-text' id='productPrice'> $${data[i].price} </p>
-        
-        <div>
-            <form class='form'>
-                <input type="number" id='input${data[i].id}' class="itemQuantity" name="tentacles" min="0" max="100" placeholder='0' class='price'>
-                <button id='${data[i].id}' type='submit' class='add'>Add To Cart</button>
-            </form>
-            
-        </div>
+                    <div class='card m-2 border-2' style='width:200px;'>
+                    <img src='${data[i].image}' class='fake'>
+                    <div class='card-body'>
+                    <p class ='card-title' id='productTitle'> ${data[i].title} </p>
+                    <p class='card-text' id='productPrice'> $${data[i].price} </p>
+                    <button class="add-cart${data[i].id} bottom"> Add To Cart</button>
                 `);
 			} else if (data[i].category === 'electronics') {
-				console.log('hello');
+				// console.log('hello');
 				$('#electronic').append(`
-        <div class='card m-2 border-2' style='width:200px;'>
-        <img src='${data[i].image}' class='fake'>
-        <div class='card-body'>
-        <p class ='card-title' id='productTitle'> ${data[i].title} </p>
-        <p class='card-text' id='productPrice'> $${data[i].price} </p>
-        
-        <div>
-            <form class='form'>
-                <input type="number" id='input${data[i].id}' class="itemQuantity" name="tentacles" min="0" max="100" placeholder='0' class='price'>
-                <button id='${data[i].id}' type='submit' class='add'>Add To Cart</button>
-            </form>
-            
-        </div>
+                    <div class='card m-2 border-2' style='width:200px;'>
+                    <img src='${data[i].image}' class='fake'>
+                    <div class='card-body'>
+                    <p class ='card-title' id='productTitle'> ${data[i].title} </p>
+                    <p class='card-text' id='productPrice'> $${data[i].price} </p>
+                    <button class="add-cart${data[i].id} bottom"> Add To Cart</button>
                 `);
 			};
-    };
-  });
-		
-      // (Suppose to be this link for category women clothing)
-      // $.get("https://storetester.herokuapp.com/api/products/category/women_clothing", function(people) {   
-      //   $.get("https://fakestoreapi.com/products", function(data) {
-      //     // var data = people.data;
-      //     var htmlStr = "";
-      //     for(var i = 0; i <20; i++) {
-      //       var name = data[i].title;
-      //       var price = data[i].price
-      //       // var description = data[i].description
+        let carts = document.querySelectorAll(`.add-cart${data[i].id}`);
+        for(let i = 0; i < carts.length; i++){
+            carts[i].addEventListener('click', () => {
+                cartNumbers(data[i]);
+            })
+        }
 
-      //       htmlStr += "<div class='female m-2 border-2' style='width:200px;'>";
-      //       htmlStr += "<img src=" + data[i].image +" alt='product image' class='fake' style='padding:5px'>";
-      //       htmlStr += "<div class='card-body'>";
-      //       htmlStr += "<h5 class='card-title'>" + name + "</h5>";
-      //       htmlStr += "<p class='card-text'>"+ "$" + price + "</p>";
-      //       // htmlStr += "<p class='card-text'>" + description + "</>" 
-      //       htmlStr += "</div>";
-      //       htmlStr += "</div>";
-      //   };
-      //   $("#women").append(htmlStr);
-      // });
+        function onloadCartNumbers(){
+            let productNumbers = localStorage.getItem('cartNumbers');
+            if(productNumbers){
+                document.querySelector('.cart span').textContent = productNumbers;
+            }
+        }
+        function cartNumbers(data){
+            let productNumbers = localStorage.getItem('cartNumbers', 1);
 
-      // (Suppose to be this link for category men_clothing)
-      // $.get("https://storetester.herokuapp.com/api/products/category/men_clothing", function(people) {   
-      //   $.get("https://fakestoreapi.com/products", function(data) {
-      //     //var data = people.data;
-      //     // var htmlStr = "";
-
-      //   //   for(var i = 0; i <=0; i++) {
-      //   //     var name = data[0].title;
-      //   //     var price = data[0].price
-
-      //   //     htmlStr += "<div class='male m-2 border-0' style='width:200px;'>";
-      //   //     htmlStr += "<img src=" + data[0].image +" alt='product image' class='fake'>";
-      //   //     htmlStr += "<div class='card-body margin:10px'>";
-      //   //     htmlStr += "<h5 class='card-title margin:10px'>" + name + "</h5>";
-      //   //     htmlStr += "<p class='card-text'>" + "$" + price + "</p>"; 
-      //   //     htmlStr += "</div>";
-      //   //     htmlStr += "</div>";
-      //   // };
-      //   // $("#men").attr(htmlStr);
         
-      //     for(var i = 0; i < 20; i++) {
+            productNumbers = parseInt(productNumbers);
+            if(productNumbers){
+                localStorage.setItem('cartNumbers', productNumbers + 1);
+                document.querySelector('.cart span').textContent = productNumbers + 1;
+            } else {
+                localStorage.setItem('cartNumbers', 1);
+                document.querySelector('.cart span').textContent = 1;
+            }
+            setItem(data);
+        }
+        function setItem(data){
+            console.log('inside my setItem');
+            console.log('my items are:', data);
 
-      //         // var name = data[i].title;
-      //         // var price = data[i].price
-      //         if (data[i].category === "men's clothing") {
-      //           $('#men').append(`
-      //         <p id='productTitle'> ${data[i].title} </p>
-      //         <p id='productDescription'> ${data[i].description} </p>
-      //         <img src='${data[i].image}'>
-      //         <div>
-      //             <form class='form'>
-      //                 <input type="number" id='input${data[i].id}' class="itemQuantity" name="tentacles" min="0" max="100" placeholder='0'>
-      //                 <button id='${data[i].id}' type='submit'>Add To Cart</button>
-      //             </form>
-      //             <p id='productPrice'> $${data[i].price} </p>
-      //         </div>
-      //         <hr />
-      //     `);
-      //     };
-          
-
-      // });
-
-      // (Suppose to be this link for category jewelry)
-      // $.get("https://storetester.herokuapp.com/api/products/category/jewelry", function(people) {   
-      //   $.get("https://fakestoreapi.com/products", function(data) {
-      //     var htmlStr = "";
+            // data.rating = 1;
+            // let cartItems= {
+            //     [data.title]: data
+            // }
+            // localStorage.setItem("productInCart", JSON.stringify(cartItems));
+        }
+        onloadCartNumbers();
+        };
         
-      //     for(var i = 1; i < 5; i++) {
-      //         var name = data[i].title;
-      //         var price = data[i].price
-              
-      //         htmlStr += "<div class='bling m-2 border-0' style='width:200px;'>";
-      //         htmlStr += "<img src=" + data[i].image +" alt='product image' class='fake'>";
-      //         htmlStr += "<div class='card-body'>";
-      //         htmlStr += "<h5 class='card-title margin:10px'>" + name + "</h5>";
-      //         htmlStr += "<p class='card-text'>" + "$" + price + "</p>"; 
-      //         htmlStr += "</div>";
-      //         htmlStr += "</div>";
-      //     };
-      //     $("#jewelry").append(htmlStr);
-      // });
-
-      // // (Suppose to be this link for category electronic)
-      // // $.get("https://storetester.herokuapp.com/api/products/category/electronic", function(people) {   
-      // $.get("https://fakestoreapi.com/products", function(data) {
-          
-      //     var htmlStr = "";
-      //     for(var i = 0; i <=0; i++) {
-      //       var name = data[17].title;
-      //       var price = data[17].price
-
-      //       htmlStr += "<div class='male m-2 border-0' style='width:200px;'>";
-      //       htmlStr += "<img src=" + data[17].image +" alt='product image' class='fake'>";
-      //       htmlStr += "<div class='card-body'>";
-      //       htmlStr += "<h5 class='card-title margin:10px'>" + name + "</h5>";
-      //       htmlStr += "<p class='card-text'>" +"$" + price + "</p>"; 
-      //       htmlStr += "</div>";
-      //       htmlStr += "</div>";
-      //     };
-      //     $("#electronic").attr(htmlStr);
-
-      //     for(var i = 5; i < 11; i++) {
-      //         var name = data[i].title;
-      //         var price = data[i].price
-
-      //         htmlStr += "<div class='electric m-2 border-0' style='width:200px;'>";
-      //         htmlStr += "<img src=" + data[i].image +" alt='product image' class='fake'>";
-      //         htmlStr += "<div class='card-body'>";
-      //         htmlStr += "<h5 class='card-title margin:10px'>" + name + "</h5>";
-      //         htmlStr += "<p class='card-text'>" + "$" + price + "</p>"; 
-      //         htmlStr += "</div>";
-      //         htmlStr += "</div>";
-      //     };
-      //     $("#electronic").append(htmlStr);
-      // }, "json");
+    });
 
       var apiKey = '6b71e45e81339efb68c7b8d995519887'
 
